@@ -2,9 +2,9 @@ import os
 
 def mergefiles(a,b):
     print ("merging files "+ str(a)+" and "+str(b))
-    file1 = open('./merge/'+str(a)+'.txt','r')
-    file2 = open('./merge/'+str(b)+'.txt','r')
-    newfile = open('./merge/'+"merg"+'.txt','w+')
+    file1 = open('./temp/'+str(a)+'.txt','r')
+    file2 = open('./temp/'+str(b)+'.txt','r')
+    newfile = open('./temp/'+"merg"+'.txt','w+')
     l1 = file1.readline()
     l2 = file2.readline()
     while (l1 and l2 ): 
@@ -29,14 +29,14 @@ def mergefiles(a,b):
     file1.close()
     file2.close()
     newfile.close()
-    os.remove('./merge/'+str(b)+'.txt')
-    os.remove('./merge/'+str(a)+'.txt')
-    os.rename('./merge/'+"merg"+'.txt', './merge/'+str(a+1)+'.txt')
+    os.remove('./temp/'+str(b)+'.txt')
+    os.remove('./temp/'+str(a)+'.txt')
+    os.rename('./temp/'+"merg"+'.txt', './temp/'+str(a+1)+'.txt')
 
 
 r=6
 for i in range(1,r+1):
     if i == r:
-        os.rename('./merge/'+str(i)+'.txt', './merge/'+"temp_final"+'.txt')
+        os.rename('./temp/'+str(i)+'.txt', './temp/'+"temp_final"+'.txt')
         break
     mergefiles((i), i+1)

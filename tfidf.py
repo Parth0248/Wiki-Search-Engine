@@ -19,7 +19,7 @@ div = 1
 f_name = "./temp/" + str(div) + ".txt"
 sav = open(f_name,'w+')
 sec_ind = open('./temp/sec_ind.txt','w+')
-with open("./merge/temp_final.txt",'r') as f:
+with open("./temp/temp_final.txt",'r') as f:
     for line in f:
         if i > 1 and i % 15000 == 1:
             sav.close()

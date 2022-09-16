@@ -226,13 +226,13 @@ def process(item,category,doc_id,file_no):
 
 
 def seg(name):
-    f_name = './temp1/' + str(name) + ".txt"
+    f_name = './temp/' + str(name) + ".txt"
     f = open(f_name,'w+')
     
     for key in sorted(inv_ind.keys()):
         f.write('%s:%s\n' % (key, inv_ind[key]))
     
-    ti_name = './temp1/' + "titles" + ".txt"
+    ti_name = './temp/' + "titles" + ".txt"
     if os.path.exists(ti_name) == 0:
          ti = open(ti_name,'w+')       
     else:
